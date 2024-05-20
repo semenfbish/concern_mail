@@ -1,0 +1,22 @@
+version: '3.4'
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "127.0.0.1:80:80"
+    volumes:
+      - ./dist:/var/www/html
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    restart: always
+    depends_on:
+      - backend
+
+
+  backend:
+    build: buckend
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      DB_NAME: /app/mge-based.sqlite
+      DB_TYPE: sqlite
+      JWT_KEY: "changethis"
