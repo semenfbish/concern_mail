@@ -29,12 +29,12 @@ const handleGetMessages = async () => {
     // Запрос на получение сообщений
     const response = await axios.get("/buckend/get_messages", {
       params: {
-        address: Address.parse(wallet as string) // Замените на адрес вашего пользователя
+        address: Address.parse(wallet as string) 
       }
     });
     setMessages(response.data);
     // Обработка полученных сообщений
-    console.log(response.data); // Пример обработки, замените на вашу логику
+    console.log(response.data);
   } catch (error) {
     console.error('Error fetching messages:', error);
   }
