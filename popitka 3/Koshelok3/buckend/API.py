@@ -366,7 +366,7 @@ async def main():
             "proof_payload": proof_payload,
             "exp": datetime.utcnow() + timedelta(minutes=60)  # Срок действия токена 60 минут
         }
-        jwt_token = jwt.encode(token_payload, 'bulatlox', algorithm='HS256')
+        jwt_token = jwt.encode(token_payload, '......', algorithm='HS256')
         print('JWT token:', jwt_token)
 
         print('Waiting 2 minutes to disconnect...')
